@@ -3,13 +3,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-import headerImage from "../../assets/bild17.png";
-import laneSideImage from "../../assets/bild10.png";
+import headerImage from "../../assets/bild17-opt.webp";
+import laneSideImage from "../../assets/bild10-opt.webp";
 import heroBackgroundImage from "../../assets/d3eabef4-072c-44ca-9029-d8472e38df44.jpeg.avif";
-import geisterbahnCarImage from "../../assets/geisterbahn.png";
+import geisterbahnCarImage from "../../assets/geisterbahn-opt.webp";
 import dscImage from "../../assets/DSC_0008.jpeg";
 import traditionImage from "../../assets/GEISTEREXPRESS_SchneiderbyHM2025.jpg";
-import warumImage from "../../assets/GBN5FG3SPVC47BZY44SOXGFMSI.jpg";
+import warumImage from "../../assets/GBN5FG3SPVC47BZY44SOXGFMSI-opt.webp";
 
 export default function GeisterExpressPage() {
   const horizontalRef = useRef<HTMLElement | null>(null);
@@ -23,27 +23,27 @@ export default function GeisterExpressPage() {
   return (
     <div className="relative overflow-x-clip bg-[#030304] text-[#d4d4d8]">
       <div className="pointer-events-none absolute top-[2vh] left-[18%] z-10 h-[44vh] w-20 -translate-x-1/2 opacity-80 md:hidden">
-        <Image src={laneSideImage} alt="Dekor links mobil" fill className="object-contain object-top" priority />
+        <Image src={laneSideImage} alt="Dekor links mobil" fill sizes="80px" className="object-contain object-top" />
       </div>
       <div className="pointer-events-none absolute top-[2vh] right-[18%] z-10 h-[44vh] w-20 translate-x-1/2 opacity-80 md:hidden">
         <Image
           src={laneSideImage}
           alt="Dekor rechts mobil"
           fill
+          sizes="80px"
           className="object-contain object-top scale-x-[-1]"
-          priority
         />
       </div>
       <div className="pointer-events-none absolute top-[2vh] left-[18%] z-10 hidden h-[50vh] w-24 -translate-x-1/2 opacity-95 md:block md:left-[22%] md:w-28 lg:left-[26%] lg:w-32">
-        <Image src={laneSideImage} alt="Dekor links" fill className="object-contain object-top" priority />
+        <Image src={laneSideImage} alt="Dekor links" fill sizes="(max-width: 1024px) 112px, 128px" className="object-contain object-top" />
       </div>
       <div className="pointer-events-none absolute top-[2vh] right-[18%] z-10 hidden h-[50vh] w-24 translate-x-1/2 opacity-95 md:block md:right-[22%] md:w-28 lg:right-[26%] lg:w-32">
         <Image
           src={laneSideImage}
           alt="Dekor rechts"
           fill
+          sizes="(max-width: 1024px) 112px, 128px"
           className="object-contain object-top scale-x-[-1]"
-          priority
         />
       </div>
 
@@ -70,6 +70,7 @@ export default function GeisterExpressPage() {
                   src={headerImage}
                   alt="Geister Express Frontmotiv"
                   fill
+                  sizes="98vw"
                   className="object-contain object-center"
                   priority
                 />
@@ -92,8 +93,8 @@ export default function GeisterExpressPage() {
               src={headerImage}
               alt="Geister Express Frontmotiv"
               fill
+              sizes="(max-width: 768px) 0px, (max-width: 1280px) 60vw, 45vw"
               className="object-contain object-center"
-              priority
             />
             <div className="absolute inset-x-0 top-[38%] z-30 text-center">
               <h1 className="font-heading text-5xl font-bold tracking-tight text-[#f1f5f9] drop-shadow-[0_6px_14px_rgba(0,0,0,0.85)] lg:text-7xl">
@@ -123,7 +124,7 @@ export default function GeisterExpressPage() {
               </p>
             </article>
             <div className="relative h-64 overflow-hidden border border-[#8c96a3]/40">
-              <Image src={dscImage} alt="Geister Express Szene" fill className="object-cover object-center" />
+              <Image src={dscImage} alt="Geister Express Szene" fill sizes="100vw" className="object-cover object-center" />
             </div>
 
             <article className="border border-[#5b6472]/55 bg-[linear-gradient(145deg,rgba(24,28,36,0.95)_0%,rgba(48,56,68,0.92)_48%,rgba(20,24,31,0.96)_100%)] p-6 text-[#e6edf6]">
@@ -141,7 +142,7 @@ export default function GeisterExpressPage() {
               </p>
             </article>
             <div className="relative h-64 overflow-hidden border border-[#5b6472]/45">
-              <Image src={traditionImage} alt="Geister Express Tradition" fill className="object-cover object-center" />
+              <Image src={traditionImage} alt="Geister Express Tradition" fill sizes="100vw" className="object-cover object-center" />
             </div>
 
             <article className="border border-[#6a7381]/45 bg-[linear-gradient(160deg,rgba(18,21,28,0.94)_0%,rgba(41,47,58,0.9)_55%,rgba(16,19,25,0.95)_100%)] p-6 text-[#e7edf5]">
@@ -153,12 +154,12 @@ export default function GeisterExpressPage() {
               </p>
             </article>
             <div className="relative h-64 overflow-hidden border border-[#6a7381]/45">
-              <Image src={warumImage} alt="Warum der Geister Express" fill className="object-cover object-center" />
+              <Image src={warumImage} alt="Warum der Geister Express" fill sizes="100vw" className="object-cover object-center" />
             </div>
 
             <div className="relative mt-1 h-2 border-y border-[#c7ced8]/30 bg-[linear-gradient(90deg,rgba(70,76,84,0.9)_0%,rgba(170,178,188,0.95)_22%,rgba(96,104,114,0.95)_50%,rgba(176,184,194,0.95)_78%,rgba(66,72,80,0.9)_100%)]" />
             <div className="relative -mt-4 -ml-6 h-64 w-64">
-              <Image src={geisterbahnCarImage} alt="Geisterbahn Wagen" fill className="object-contain object-center" />
+              <Image src={geisterbahnCarImage} alt="Geisterbahn Wagen" fill sizes="256px" className="object-contain object-center" />
             </div>
           </div>
         </section>
@@ -173,8 +174,8 @@ export default function GeisterExpressPage() {
                 src={geisterbahnCarImage}
                 alt="Geisterbahn Wagen"
                 fill
+                sizes="(max-width: 1280px) 224px, 320px"
                 className="object-contain object-center"
-                priority
               />
             </motion.div>
             <motion.div style={{ x: trackX }} className="relative flex h-full w-[300vw]">
@@ -198,6 +199,7 @@ export default function GeisterExpressPage() {
                     src={dscImage}
                     alt="Geister Express Szene"
                     fill
+                    sizes="(max-width: 1280px) 250px, 320px"
                     className="object-cover object-center"
                   />
                 </motion.div>
@@ -226,6 +228,7 @@ export default function GeisterExpressPage() {
                     src={traditionImage}
                     alt="Geister Express Tradition"
                     fill
+                    sizes="(max-width: 1280px) 230px, 300px"
                     className="object-cover object-center"
                   />
                 </motion.div>
@@ -257,6 +260,7 @@ export default function GeisterExpressPage() {
                     src={warumImage}
                     alt="Warum der Geister Express"
                     fill
+                    sizes="(max-width: 1280px) 230px, 300px"
                     className="object-cover object-center"
                   />
                 </motion.div>

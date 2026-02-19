@@ -1,5 +1,5 @@
 import Link from "next/link";
-import headerBackgroundImage from "../assets/bild18.jpg";
+import headerBackgroundImage from "../assets/bild18-opt.webp";
 import Image from "next/image";
 import sampleImageA from "../assets/pirates-adventure.jpg";
 import sampleImageB from "../assets/DSC_0008.jpeg";
@@ -54,7 +54,7 @@ export default function Home() {
                 Hier könnte ein Text über uns hin.
               </p>
               <div className="relative mt-4 h-36 overflow-hidden border border-[#bfc8d6]">
-                <Image src={sampleImageA} alt="Platzhalterbild Über uns" fill className="object-cover" />
+                <Image src={sampleImageA} alt="Platzhalterbild Über uns" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
               </div>
             </div>
             <div className="border border-[#c0cad8] bg-white p-6 shadow-[0_8px_0_rgba(184,138,46,0.16)]">
@@ -63,7 +63,7 @@ export default function Home() {
                 Hier könnte ein Text zu den Attraktionen hin.
               </p>
               <div className="relative mt-4 h-36 overflow-hidden border border-[#bfc8d6]">
-                <Image src={sampleImageB} alt="Platzhalterbild Attraktionen" fill className="object-cover" />
+                <Image src={sampleImageB} alt="Platzhalterbild Attraktionen" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
               </div>
             </div>
             <div className="border border-[#c0cad8] bg-white p-6 shadow-[0_8px_0_rgba(184,138,46,0.16)]">
@@ -72,7 +72,7 @@ export default function Home() {
                 Hier könnte ein Text zu Tourdaten und Planung hin.
               </p>
               <div className="relative mt-4 h-36 overflow-hidden border border-[#bfc8d6]">
-                <Image src={sampleImageC} alt="Platzhalterbild Termine" fill className="object-cover" />
+                <Image src={sampleImageC} alt="Platzhalterbild Termine" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative h-64 overflow-hidden border border-[#bfc8d6]">
-                  <Image src={sampleImageA} alt="Platzhalterbild Entstehungsgeschichte" fill className="object-cover" />
+                  <Image src={sampleImageA} alt="Platzhalterbild Entstehungsgeschichte" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                 </div>
               </div>
             </div>

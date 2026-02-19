@@ -9,9 +9,9 @@ import {
 import Image from "next/image";
 import { Facebook, Instagram, Mail } from "lucide-react";
 import mastImage from "../assets/bild1.png";
-import frontTopImage from "../assets/bild2.png";
+import frontTopImage from "../assets/bild2-opt.webp";
 import transitionImage from "../assets/bild5.png";
-import laneImage from "../assets/bild10.png";
+import laneImage from "../assets/bild10-opt.webp";
 import laneHeadImage from "../assets/bild13.png";
 import homeBgImage from "../assets/pirates-adventure.jpg";
 import onrideImage from "../assets/onride-upic23938@1120.jpeg";
@@ -82,6 +82,7 @@ export default function LandingPage() {
                 src={laneHeadImage}
                 alt="Ende der Fortschritts-Lane"
                 fill
+                sizes="80px"
                 className="object-contain object-center"
               />
             </motion.div>
@@ -112,6 +113,7 @@ export default function LandingPage() {
                 src={laneHeadImage}
                 alt="Ende der Fortschritts-Lane"
                 fill
+                sizes="(max-width: 1024px) 128px, 160px"
                 className="object-contain object-center"
               />
             </motion.div>
@@ -136,12 +138,13 @@ export default function LandingPage() {
                 <div className="pointer-events-none absolute left-[12%] top-[-34%] h-[38%] w-[2px] bg-[linear-gradient(180deg,#a6adb6_0%,#5f6670_100%)] opacity-80" />
                 <div className="pointer-events-none absolute right-[12%] top-[-34%] h-[38%] w-[2px] bg-[linear-gradient(180deg,#a6adb6_0%,#5f6670_100%)] opacity-80" />
                 <div className="pointer-events-none absolute left-1/2 top-[34%] z-10 h-36 w-10 -translate-x-1/2 opacity-80">
-                  <Image src={mastImage} alt="Mast-Detail mittig" fill className="object-contain object-bottom" />
+                  <Image src={mastImage} alt="Mast-Detail mittig" fill sizes="40px" className="object-contain object-bottom" />
                 </div>
                 <Image
                   src={frontTopImage}
                   alt="Pirates Adventure Frontmotiv"
                   fill
+                  sizes="94vw"
                   className="object-contain object-center relative z-40"
                   priority
                 />
@@ -168,8 +171,8 @@ export default function LandingPage() {
               src={frontTopImage}
               alt="Piraten-Detail im Vordergrund"
               fill
+              sizes="(max-width: 768px) 0px, (max-width: 1280px) 60vw, 45vw"
               className="object-contain object-center"
-              priority
             />
             <div className="absolute inset-x-0 top-[35%] z-50 text-center">
               <h1 className="font-heading text-5xl font-bold tracking-tight text-black lg:text-7xl">
@@ -216,8 +219,8 @@ export default function LandingPage() {
                   src={mastImage}
                   alt="Mast des Piratenschiffs"
                   fill
+                  sizes="128px"
                   className="object-contain object-center opacity-95"
-                  priority
                 />
               </div>
             </div>
@@ -227,6 +230,7 @@ export default function LandingPage() {
                   src={mastImage}
                   alt="Mast des Piratenschiffs"
                   fill
+                  sizes="128px"
                   className="object-contain object-center opacity-95"
                 />
               </div>
@@ -244,6 +248,7 @@ export default function LandingPage() {
                   src={mastImage}
                   alt="Mast des Piratenschiffs"
                   fill
+                  sizes="128px"
                   className="object-contain object-center opacity-95"
                 />
               </div>
@@ -254,6 +259,7 @@ export default function LandingPage() {
                   src={mastImage}
                   alt="Mast des Piratenschiffs"
                   fill
+                  sizes="128px"
                   className="object-contain object-center opacity-95"
                 />
               </div>
@@ -279,20 +285,20 @@ export default function LandingPage() {
           </div>
 
           <div className="pointer-events-none absolute left-1/2 top-0 z-[95] h-[22rem] w-[112vw] -translate-x-1/2 -translate-y-[54%] opacity-100 md:hidden">
-            <Image src={transitionImage} alt="Piraten-Detail am Übergang" fill className="object-contain object-center" />
+            <Image src={transitionImage} alt="Piraten-Detail am Übergang" fill sizes="100vw" className="object-contain object-center" />
           </div>
           <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-[28rem] w-14 -translate-x-1/2 -translate-y-[90%] md:hidden">
             <div className="absolute bottom-0 left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
-              <Image src={mastImage} alt="Mast-Detail Segment 1" fill className="object-contain object-top" />
+              <Image src={mastImage} alt="Mast-Detail Segment 1" fill sizes="56px" className="object-contain object-top" />
             </div>
             <div className="absolute bottom-[32%] left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
-              <Image src={mastImage} alt="Mast-Detail Segment 2" fill className="object-contain object-top" />
+              <Image src={mastImage} alt="Mast-Detail Segment 2" fill sizes="56px" className="object-contain object-top" />
             </div>
             <div className="absolute bottom-[64%] left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
-              <Image src={mastImage} alt="Mast-Detail Segment 3" fill className="object-contain object-top" />
+              <Image src={mastImage} alt="Mast-Detail Segment 3" fill sizes="56px" className="object-contain object-top" />
             </div>
             <div className="absolute bottom-[96%] left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
-              <Image src={mastImage} alt="Mast-Detail Segment 4" fill className="object-contain object-top" />
+              <Image src={mastImage} alt="Mast-Detail Segment 4" fill sizes="56px" className="object-contain object-top" />
             </div>
           </div>
 
@@ -307,8 +313,8 @@ export default function LandingPage() {
               src={transitionImage}
               alt="Piraten-Detail am Übergang"
               fill
+              sizes="(max-width: 768px) 0px, (max-width: 1280px) 90vw, 70vw"
               className="object-contain object-center"
-              priority
             />
           </motion.div>
 
@@ -339,6 +345,7 @@ export default function LandingPage() {
                   src={onrideImage}
                   alt="Onride Einblick in das Pirates Adventure"
                   fill
+                  sizes="100vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -354,6 +361,7 @@ export default function LandingPage() {
                   src={onrideImage}
                   alt="Onride Einblick in das Pirates Adventure"
                   fill
+                  sizes="(max-width: 1024px) 280px, 350px"
                   className="object-cover object-center"
                 />
               </motion.div>
@@ -392,6 +400,7 @@ export default function LandingPage() {
                   src={onrideImage}
                   alt="Onride Einblick in das Pirates Adventure"
                   fill
+                  sizes="100vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -407,6 +416,7 @@ export default function LandingPage() {
                   src={onrideImage}
                   alt="Onride Einblick in das Pirates Adventure"
                   fill
+                  sizes="(max-width: 1024px) 300px, 360px"
                   className="object-cover object-center"
                 />
               </motion.div>
