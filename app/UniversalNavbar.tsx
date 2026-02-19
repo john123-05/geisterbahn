@@ -18,7 +18,10 @@ export default function UniversalNavbar() {
     <header className="sticky top-0 z-[100] border-b border-[#e6dcc3] bg-white/95 backdrop-blur-md">
       <div className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[#b88a2e] via-[#f0d38c] to-[#b88a2e]" />
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="font-heading text-base font-bold tracking-tight text-[#1f2937] sm:text-lg">
+        <Link
+          href="/"
+          className="max-w-[75%] whitespace-normal font-heading text-[13px] leading-tight font-bold tracking-tight text-[#1f2937] sm:max-w-none sm:text-lg"
+        >
           Schaustellerbetrieb Schneider
         </Link>
 
@@ -59,6 +62,17 @@ export default function UniversalNavbar() {
       {mobileOpen ? (
         <div className="border-t border-[#e8dcc2] bg-white md:hidden">
           <nav className="mx-auto flex w-full max-w-7xl flex-col gap-1 px-4 py-3 sm:px-6">
+            <Link
+              href="/"
+              className={`border px-3 py-2 text-sm font-semibold uppercase tracking-[0.12em] ${
+                pathname === "/"
+                  ? "border-[#b88a2e] bg-[#fff5df] text-[#7c5a1c]"
+                  : "border-[#d7deea] bg-white text-[#334155]"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              Startseite
+            </Link>
             {navLinks.map((item) => {
               const active = pathname === item.href;
               return (
@@ -70,6 +84,7 @@ export default function UniversalNavbar() {
                       ? "border-[#b88a2e] bg-[#fff5df] text-[#7c5a1c]"
                       : "border-[#d7deea] bg-white text-[#334155]"
                   }`}
+                  onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
                 </Link>

@@ -7,7 +7,7 @@ import sampleImageC from "../assets/GEISTEREXPRESS_SchneiderbyHM2025.jpg";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#eef2f7] text-[#0f172a]">
+    <div className="min-h-screen overflow-x-clip bg-[#eef2f7] text-[#0f172a]">
       <main>
         <section
           className="relative border-b border-[#e2e8f0]"
@@ -21,7 +21,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(255,255,255,0.74)_100%)]" />
           <div className="mx-auto grid min-h-[52vh] w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
             <div className="relative z-10 space-y-4">
-              <h1 className="font-heading text-4xl font-bold tracking-tight text-[#0f172a] sm:text-5xl">
+              <h1 className="font-heading text-3xl font-bold leading-tight tracking-tight break-words text-[#0f172a] sm:text-5xl">
                 Schaustellerbetrieb Schneider
               </h1>
               <p className="max-w-xl text-sm text-[#334155] sm:text-base">
@@ -30,13 +30,13 @@ export default function Home() {
               <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                 <Link
                   href="/kontakt"
-                  className="inline-flex h-10 w-full items-center justify-center border border-[#0f172a] bg-[#0f172a] px-2 text-xs font-semibold uppercase tracking-[0.12em] text-white sm:w-48 sm:pl-1"
+                  className="inline-flex h-10 w-full items-center justify-center border border-[#0f172a] bg-[#0f172a] px-3 text-center text-[11px] leading-tight font-semibold uppercase tracking-[0.08em] text-white sm:w-48 sm:px-2 sm:text-xs sm:tracking-[0.12em]"
                 >
                   Kontakt aufnehmen
                 </Link>
                 <Link
                   href="/pirates-adventure"
-                  className="inline-flex h-10 w-full items-center justify-center border border-[#b88a2e] bg-[#fff9ec] text-xs font-semibold uppercase tracking-[0.12em] text-[#7c5a1c] sm:w-40"
+                  className="inline-flex h-10 w-full items-center justify-center border border-[#b88a2e] bg-[#fff9ec] px-3 text-center text-[11px] leading-tight font-semibold uppercase tracking-[0.08em] text-[#7c5a1c] sm:w-40 sm:px-2 sm:text-xs sm:tracking-[0.12em]"
                 >
                   Unser Angebot
                 </Link>
@@ -104,7 +104,7 @@ export default function Home() {
             <div className="mt-8 border border-[#bac5d5] bg-white p-6 shadow-[0_8px_0_rgba(184,138,46,0.16)] sm:p-8">
               <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
                 <div>
-                  <h3 className="font-heading text-2xl font-bold text-[#1e293b] sm:text-3xl">
+                  <h3 className="font-heading text-xl font-bold leading-tight break-words text-[#1e293b] sm:text-3xl">
                     Die Entstehungsgeschichte
                   </h3>
                   <p className="mt-4 text-sm text-[#475569] sm:text-base">

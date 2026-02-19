@@ -11,7 +11,6 @@ import { Facebook, Instagram, Mail } from "lucide-react";
 import mastImage from "../assets/bild1.png";
 import frontTopImage from "../assets/bild2.png";
 import transitionImage from "../assets/bild5.png";
-import sideEdgeImage from "../assets/bild8.png";
 import laneImage from "../assets/bild10.png";
 import laneHeadImage from "../assets/bild13.png";
 import homeBgImage from "../assets/pirates-adventure.jpg";
@@ -52,12 +51,43 @@ export default function LandingPage() {
   const laneOffsetY = useTransform(scrollYProgress, [0, 1], [0, -700]);
   const laneOpacity = useTransform(scrollYProgress, [0.18, 0.24, 0.78, 0.82], [0, 1, 1, 0]);
   const laneHeight = useTransform(scrollYProgress, [0.22, 0.78], ["0vh", "360vh"]);
+  const mobileLaneOpacity = useTransform(scrollYProgress, [0, 0.74, 0.75], [1, 1, 0]);
+  const mobileLaneHeight = useTransform(scrollYProgress, [0.16, 0.74], ["24vh", "380vh"]);
 
   return (
     <div className="relative isolate overflow-x-clip bg-[#050A18] text-[#f2e4c2]">
       <div className="grain-overlay" aria-hidden />
 
       <main className="relative z-10">
+        <motion.div
+          style={{ opacity: mobileLaneOpacity }}
+          className="pointer-events-none absolute left-[8%] top-[88vh] z-[90] w-14 -translate-x-1/2 md:hidden"
+        >
+          <motion.div
+            style={{
+              height: mobileLaneHeight,
+              backgroundImage: `url(${laneImage.src})`,
+              backgroundRepeat: "repeat-y",
+              backgroundSize: "100% auto",
+              backgroundPosition: "center top",
+            }}
+            className="relative w-full"
+          >
+            <motion.div
+              animate={{ rotate: [-4, 4, -4] }}
+              transition={{ duration: 11, ease: "easeInOut", repeat: Infinity }}
+              className="pointer-events-none absolute left-1/2 bottom-0 z-[46] h-20 w-20 -translate-x-1/2 translate-y-[78%] origin-top"
+            >
+              <Image
+                src={laneHeadImage}
+                alt="Ende der Fortschritts-Lane"
+                fill
+                className="object-contain object-center"
+              />
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
         <motion.div
           style={{ opacity: laneOpacity }}
           className="pointer-events-none absolute left-[calc(50%+48vh)] top-[112vh] z-[45] hidden w-28 -translate-x-1/2 md:block lg:w-36"
@@ -90,7 +120,7 @@ export default function LandingPage() {
 
         <section
           id="home"
-          className="relative border-t border-white/10"
+          className="relative min-h-[44vh] border-t border-white/10 md:min-h-screen"
           style={{
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
             backgroundImage: `url(${homeBgImage.src})`,
@@ -100,6 +130,33 @@ export default function LandingPage() {
           }}
         >
           <div className="pointer-events-none absolute inset-0 z-0 bg-[#8fd3ff]/35" />
+          <div className="relative z-30 mx-auto w-full max-w-7xl px-4 pb-3 pt-4 md:hidden">
+            <div className="mx-auto w-[94vw] max-w-[620px] text-center">
+              <div className="relative h-[24vh] min-h-[170px] max-h-[250px]">
+                <div className="pointer-events-none absolute left-[12%] top-[-34%] h-[38%] w-[2px] bg-[linear-gradient(180deg,#a6adb6_0%,#5f6670_100%)] opacity-80" />
+                <div className="pointer-events-none absolute right-[12%] top-[-34%] h-[38%] w-[2px] bg-[linear-gradient(180deg,#a6adb6_0%,#5f6670_100%)] opacity-80" />
+                <div className="pointer-events-none absolute left-1/2 top-[34%] z-10 h-36 w-10 -translate-x-1/2 opacity-80">
+                  <Image src={mastImage} alt="Mast-Detail mittig" fill className="object-contain object-bottom" />
+                </div>
+                <Image
+                  src={frontTopImage}
+                  alt="Pirates Adventure Frontmotiv"
+                  fill
+                  className="object-contain object-center relative z-40"
+                  priority
+                />
+                <div className="absolute inset-x-0 top-[35%] z-50">
+                  <h1 className="font-heading text-5xl font-bold tracking-tight text-black">
+                    Pirates
+                  </h1>
+                  <p className="-mt-1 font-heading text-3xl font-bold text-[#d4af37]">Adventure</p>
+                  <p className="mt-0.5 font-heading text-base font-semibold text-[#d4af37]">
+                    Come and see!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <motion.div
             custom={4}
@@ -207,39 +264,38 @@ export default function LandingPage() {
             variants={sectionVariants}
             initial="hidden"
             animate="show"
-            className="mx-auto flex min-h-screen w-full max-w-7xl items-start px-4 py-24 sm:px-6 lg:px-8"
+            className="mx-auto flex min-h-[44vh] w-full max-w-7xl items-start px-4 py-24 sm:px-6 md:min-h-screen lg:px-8"
           />
         </section>
 
         <section id="ueber-uns" className="relative border-t border-[#a06b2c]/45 bg-[#6b3f1d]">
-          <motion.div
-            custom={6}
-            variants={itemVariants}
-            style={{ y: deckY }}
-            className="pointer-events-none absolute left-[8%] top-0 z-30 hidden h-[58vh] w-[58vh] -translate-x-1/2 -translate-y-1/2 md:block lg:h-[82vh] lg:w-[82vh]"
-          >
-            <Image
-              src={sideEdgeImage}
-              alt="Seitliches Piraten-Detail links"
-              fill
-              className="object-contain object-center"
-              priority
-            />
-          </motion.div>
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-20 md:hidden">
+            <div className="absolute inset-x-0 top-0 h-3 bg-[linear-gradient(180deg,#e8d9bb_0%,#d5c09a_100%)] opacity-90" />
+            <div className="absolute left-[12%] top-0 h-3 w-3 -translate-y-1/2 rounded-full border border-[#6d4b23] bg-[#d4b07a]" />
+            <div className="absolute left-[30%] top-0 h-3 w-3 -translate-y-1/2 rounded-full border border-[#6d4b23] bg-[#d4b07a]" />
+            <div className="absolute left-[48%] top-0 h-3 w-3 -translate-y-1/2 rounded-full border border-[#6d4b23] bg-[#d4b07a]" />
+            <div className="absolute left-[66%] top-0 h-3 w-3 -translate-y-1/2 rounded-full border border-[#6d4b23] bg-[#d4b07a]" />
+            <div className="absolute left-[84%] top-0 h-3 w-3 -translate-y-1/2 rounded-full border border-[#6d4b23] bg-[#d4b07a]" />
+          </div>
 
-          <motion.div
-            custom={7}
-            variants={itemVariants}
-            style={{ y: deckY }}
-            className="pointer-events-none absolute left-[92%] top-0 z-30 hidden h-[58vh] w-[58vh] -translate-x-1/2 -translate-y-1/2 md:block lg:h-[82vh] lg:w-[82vh]"
-          >
-            <Image
-              src={sideEdgeImage}
-              alt="Seitliches Piraten-Detail rechts"
-              fill
-              className="object-contain object-center scale-x-[-1]"
-            />
-          </motion.div>
+          <div className="pointer-events-none absolute left-1/2 top-0 z-[95] h-[22rem] w-[112vw] -translate-x-1/2 -translate-y-[54%] opacity-100 md:hidden">
+            <Image src={transitionImage} alt="Piraten-Detail am Übergang" fill className="object-contain object-center" />
+          </div>
+          <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-[28rem] w-14 -translate-x-1/2 -translate-y-[90%] md:hidden">
+            <div className="absolute bottom-0 left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
+              <Image src={mastImage} alt="Mast-Detail Segment 1" fill className="object-contain object-top" />
+            </div>
+            <div className="absolute bottom-[32%] left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
+              <Image src={mastImage} alt="Mast-Detail Segment 2" fill className="object-contain object-top" />
+            </div>
+            <div className="absolute bottom-[64%] left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
+              <Image src={mastImage} alt="Mast-Detail Segment 3" fill className="object-contain object-top" />
+            </div>
+            <div className="absolute bottom-[96%] left-1/2 h-40 w-10 -translate-x-1/2 opacity-95">
+              <Image src={mastImage} alt="Mast-Detail Segment 4" fill className="object-contain object-top" />
+            </div>
+          </div>
+
 
           <motion.div
             custom={5}
@@ -262,7 +318,7 @@ export default function LandingPage() {
             animate="show"
             className="mx-auto min-h-screen w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8"
           >
-            <div className="relative mt-24 sm:mt-32">
+            <div className="relative mt-8 sm:mt-32">
               <motion.article
                 custom={8}
                 variants={itemVariants}
@@ -278,13 +334,21 @@ export default function LandingPage() {
                   Tauche ein in eine detailverliebte Piratenkulisse, die dich direkt in das goldene Zeitalter der Freibeuter entführt. Schon seit vielen Jahren begeistern wir kleine und große Abenteurer mit einer Mischung aus modernster Showtechnik, überraschenden Spezialeffekten und handgefertigten Dekorationen.
                 </p>
               </motion.article>
+              <div className="relative mt-5 h-56 overflow-hidden border border-[#7b4e24]/80 sm:hidden">
+                <Image
+                  src={onrideImage}
+                  alt="Onride Einblick in das Pirates Adventure"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
 
               <motion.div
                 initial={{ x: -110, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.45 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                className="pointer-events-none absolute top-4 left-[64%] z-40 h-[300px] w-[220px] overflow-hidden border border-[#7b4e24]/80 shadow-[0_12px_26px_rgba(0,0,0,0.35)] sm:h-[340px] sm:w-[280px] lg:h-[390px] lg:w-[350px]"
+                className="pointer-events-none absolute top-4 left-[64%] z-40 hidden h-[300px] w-[220px] overflow-hidden border border-[#7b4e24]/80 shadow-[0_12px_26px_rgba(0,0,0,0.35)] sm:block sm:h-[340px] sm:w-[280px] lg:h-[390px] lg:w-[350px]"
               >
                 <Image
                   src={onrideImage}
@@ -323,6 +387,14 @@ export default function LandingPage() {
                   Klar zum Entern? Wir freuen uns auf deinen Besuch!
                 </p>
               </motion.article>
+              <div className="relative mt-5 h-64 overflow-hidden border border-[#7b4e24]/80 sm:hidden">
+                <Image
+                  src={onrideImage}
+                  alt="Onride Einblick in das Pirates Adventure"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
 
               <motion.div
                 initial={{ x: -110, opacity: 0 }}
@@ -373,7 +445,46 @@ export default function LandingPage() {
               FAQ
             </motion.h2>
 
-            <motion.div custom={1} variants={itemVariants} className="mt-10 space-y-5">
+            <motion.div custom={1} variants={itemVariants} className="mt-10 space-y-5 sm:hidden">
+              <details className="group border border-[#a48143]/35 bg-[#f2e5c4] p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 pr-1 font-heading text-2xl font-bold tracking-tight">
+                  <span>Für welches Alter ist das Pirates Adventure geeignet?</span>
+                  <span className="text-xl leading-none transition-transform group-open:rotate-180">▾</span>
+                </summary>
+                <p className="mt-3 text-sm leading-7 text-[#4c3a1f]">
+                  Unser Laufgeschäft ist ein Abenteuer für die ganze Familie.
+                  Mutige Piraten ab 6 Jahren können die Schatzsuche alleine
+                  wagen, jüngere Entdecker sind in Begleitung ihrer Eltern
+                  herzlich willkommen.
+                </p>
+              </details>
+
+              <details className="group border border-[#a48143]/35 bg-[#f2e5c4] p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 pr-1 font-heading text-2xl font-bold tracking-tight">
+                  <span>Wie groß ist die Stellfläche für das Geschäft?</span>
+                  <span className="text-xl leading-none transition-transform group-open:rotate-180">▾</span>
+                </summary>
+                <p className="mt-3 text-sm leading-7 text-[#4c3a1f]">
+                  Wir benötigen eine Front von 22 Metern und eine Tiefe von 12
+                  Metern. Dank modernster Logistik ist unser Team in kürzester
+                  Zeit bereit zum &quot;Ankern&quot;.
+                </p>
+              </details>
+
+              <details className="group border border-[#a48143]/35 bg-[#f2e5c4] p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 pr-1 font-heading text-2xl font-bold tracking-tight">
+                  <span>Welche technischen Voraussetzungen gibt es?</span>
+                  <span className="text-xl leading-none transition-transform group-open:rotate-180">▾</span>
+                </summary>
+                <p className="mt-3 text-sm leading-7 text-[#4c3a1f]">
+                  Wir benötigen einen Standard-Stromanschluss (3x 63A). Alles
+                  Weitere wie Sound, Special Effects und Beleuchtung bringen wir
+                  autark mit.
+                </p>
+              </details>
+            </motion.div>
+
+            <motion.div custom={1} variants={itemVariants} className="mt-10 hidden space-y-5 sm:block">
               <article className="border border-[#a48143]/35 bg-[#f2e5c4] p-6">
                 <h3 className="font-heading text-2xl font-bold tracking-tight">
                   Für welches Alter ist das Pirates Adventure geeignet?
