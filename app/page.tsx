@@ -27,16 +27,16 @@ export default function Home() {
               <p className="max-w-xl text-sm text-[#334155] sm:text-base">
                 Hier könnte ein kurzer Einleitungstext über den Schaustellerbetrieb Schneider stehen.
               </p>
-              <div className="flex gap-3 pt-2">
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                 <Link
                   href="/kontakt"
-                  className="inline-flex h-10 w-48 items-center justify-center border border-[#0f172a] bg-[#0f172a] pl-1 text-xs font-semibold uppercase tracking-[0.12em] text-white"
+                  className="inline-flex h-10 w-full items-center justify-center border border-[#0f172a] bg-[#0f172a] px-2 text-xs font-semibold uppercase tracking-[0.12em] text-white sm:w-48 sm:pl-1"
                 >
                   Kontakt aufnehmen
                 </Link>
                 <Link
                   href="/pirates-adventure"
-                  className="inline-flex h-10 w-40 items-center justify-center border border-[#b88a2e] bg-[#fff9ec] text-xs font-semibold uppercase tracking-[0.12em] text-[#7c5a1c]"
+                  className="inline-flex h-10 w-full items-center justify-center border border-[#b88a2e] bg-[#fff9ec] text-xs font-semibold uppercase tracking-[0.12em] text-[#7c5a1c] sm:w-40"
                 >
                   Unser Angebot
                 </Link>

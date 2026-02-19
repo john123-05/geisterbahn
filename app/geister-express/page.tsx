@@ -22,10 +22,10 @@ export default function GeisterExpressPage() {
 
   return (
     <div className="relative overflow-x-clip bg-[#030304] text-[#d4d4d8]">
-      <div className="pointer-events-none absolute top-[2vh] left-[18%] z-10 h-[50vh] w-24 -translate-x-1/2 opacity-95 md:left-[22%] md:w-28 lg:left-[26%] lg:w-32">
+      <div className="pointer-events-none absolute top-[2vh] left-[18%] z-10 hidden h-[50vh] w-24 -translate-x-1/2 opacity-95 md:block md:left-[22%] md:w-28 lg:left-[26%] lg:w-32">
         <Image src={laneSideImage} alt="Dekor links" fill className="object-contain object-top" priority />
       </div>
-      <div className="pointer-events-none absolute top-[2vh] right-[18%] z-10 h-[50vh] w-24 translate-x-1/2 opacity-95 md:right-[22%] md:w-28 lg:right-[26%] lg:w-32">
+      <div className="pointer-events-none absolute top-[2vh] right-[18%] z-10 hidden h-[50vh] w-24 translate-x-1/2 opacity-95 md:block md:right-[22%] md:w-28 lg:right-[26%] lg:w-32">
         <Image
           src={laneSideImage}
           alt="Dekor rechts"
@@ -49,6 +49,17 @@ export default function GeisterExpressPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(150,12,26,0.28)_0%,transparent_34%),radial-gradient(circle_at_78%_68%,rgba(120,8,20,0.24)_0%,transparent_36%),radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0.56)_100%)]" />
           <div className="absolute left-[10%] top-[16%] h-40 w-40 rounded-full border border-[#8f1019]/30 bg-[#8f1019]/10 blur-2xl" />
           <div className="absolute right-[10%] bottom-[18%] h-48 w-48 rounded-full border border-white/10 bg-white/5 blur-2xl" />
+          <div className="absolute inset-x-0 top-[32%] z-20 px-4 text-center md:hidden">
+            <h1 className="font-heading text-4xl font-bold tracking-tight text-[#f1f5f9] drop-shadow-[0_6px_14px_rgba(0,0,0,0.85)]">
+              Geister
+            </h1>
+            <h2 className="-mt-1 font-heading text-4xl font-bold tracking-tight text-[#d71923] drop-shadow-[0_6px_14px_rgba(0,0,0,0.85)]">
+              Express
+            </h2>
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#dbe3ef]">
+              Geisterbahn von Louis Schneider
+            </p>
+          </div>
           <div className="pointer-events-none absolute left-1/2 top-[28%] z-20 hidden h-[60vh] w-[60vh] -translate-x-1/2 -translate-y-1/2 md:block lg:h-[85vh] lg:w-[85vh]">
             <Image
               src={headerImage}
@@ -75,7 +86,7 @@ export default function GeisterExpressPage() {
           <div className="sticky top-0 h-screen overflow-hidden">
             <motion.div
               style={{ x: carX }}
-              className="pointer-events-none absolute -bottom-20 z-40 h-40 w-40 sm:h-56 sm:w-56 lg:h-[20rem] lg:w-[20rem]"
+              className="pointer-events-none absolute -bottom-6 z-40 h-24 w-24 sm:-bottom-10 sm:h-56 sm:w-56 lg:-bottom-20 lg:h-[20rem] lg:w-[20rem]"
             >
               <Image
                 src={geisterbahnCarImage}
